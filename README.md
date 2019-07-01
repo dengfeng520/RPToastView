@@ -1,0 +1,104 @@
+<h1><center>RPToastView</center></h1>
+
+
+
+<h3>Adding RPToastView to your project</h3>
+
+**CocoaPods**
+
+**CocoaPods is the recommended way to add RPToastView to your project.**
+
+
+**1、Add a pod entry for RPToastView to your project Podfile**
+
+```
+pod 'RPToastView'
+
+```
+or
+
+```
+pod 'RPToastView', :git => 'https://github.com/dengfeng520/RPToastView'
+```
+
+**2、Install the pod by running**
+
+```
+pod install
+```
+
+**3、 Include RPToastView wherever you need it with**
+
+```
+import RPToastView
+```
+
+
+**Usage**
+
+> onlyTextMode
+
+```
+RPToastView.show(mode: .onlyTextMode, isView:self.view, text: "Loading....")
+```
+
+or
+
+```
+RPToastView.show(mode: .onlyTextMode, text: "Loading....")
+
+```
+
+> indeterminateMode
+
+
+```
+RPToastView.show(mode: .indeterminateMode, isView:self.view)
+```
+
+or
+
+```
+RPToastView.show(mode: .indeterminateMode)
+```
+
+> mixedMode
+
+```
+ RPToastView.show(mode: .mixedMode, isView:self.view, text: "Loading....")
+```
+or 
+
+```
+RPToastView.show(mode: .mixedMode, text: "Loading....")
+```
+
+> loopMode
+
+```
+RPToastView.show(mode: .loopMode, isView:self.view)
+```
+or
+
+```
+RPToastView.show(mode: .loopMode)
+```
+> loopAndTextMode
+
+```
+RPToastView.show(mode: .loopAndTextMode, isView:self.view, text: "Loading....")
+
+```
+or 
+
+```
+RPToastView.show(mode: .loopAndTextMode, text: "Loading....")
+
+```
+
+> hidden
+
+```
+RPToastView.hidden(animation: true)
+```
+
