@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum toastMode {
+public enum toastMode {
     // Only Texts
     case onlyTextMode
     // UIActivityIndicatorView
@@ -25,7 +25,7 @@ enum toastMode {
     case progressAndTextMode
 }
 
-class RPToastView:  NSObject {
+public class RPToastView:  NSObject {
     
     static var toastView : RPSubToastView!
 
