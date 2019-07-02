@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "RPToastView"
-  spec.version      = "1.2"
+  spec.version      = "1.3"
   spec.summary      = "'RPToastView' is a custom iOS view,can be easily set the hide and show it."
 
   # This description is used to generate tags and improve search results.
