@@ -1,10 +1,21 @@
-<h1><center>RPToastView</center></h1>
 
-<h4>Requirements</h4>
+
+<h2>RPToastView</h2>
+
+* iOS 9+
+
+* Swift 4.2+
+
+* pod V1.7.0+
+
+* license MIT
+
+
+<h2>Requirements</h2>
 
 **RPToastView works on iOS 9+ and requires Swift 4.2 to build.**
 
-<h4>Adding RPToastView to your project</h4>
+<h2>Adding RPToastView to your project</h2>
 
 **CocoaPods is the recommended way to add RPToastView to your project.**
 
@@ -33,7 +44,7 @@ import RPToastView
 ```
 
 
-**Usage**
+<h2>Usage</h2>
 
 > onlyTextMode
 
