@@ -24,7 +24,7 @@ Pod::Spec.new do |spec|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  spec.description  = "'RPToastView' is a custom iOS view,support for systems after iOS 9,can be easily set the hide and show it."
+  spec.description  = "'RPToastView' is a custom iOS view,support for systems after iOS 9+ and Swift 4.2+,can be easily set the hide and show it."
 
   spec.homepage     = "https://github.com/dengfeng520/RPToastView"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
