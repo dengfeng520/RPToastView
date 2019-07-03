@@ -14,8 +14,8 @@ class RPLodingView: UIView {
     
     var clouse: RPLoadingViewAnimationStopClose?
     public var radius: CGFloat = 36 / 2
-    private var backgroundShapeLayer: CAShapeLayer!
-    private var progressShapeLayer: CAShapeLayer!
+    private var backgroundLayer: CAShapeLayer!
+    private var loopLayer: CAShapeLayer!
     
     
     override init(frame: CGRect) {
@@ -30,12 +30,12 @@ class RPLodingView: UIView {
     
     func configureShapeLayer() {
         self.backgroundColor = UIColor.clear
-        backgroundShapeLayer = CAShapeLayer()
-        progressShapeLayer = CAShapeLayer()
-        backgroundShapeLayer.frame = bounds
-        progressShapeLayer.frame = bounds
-        layer.addSublayer(backgroundShapeLayer)
-        layer.addSublayer(progressShapeLayer)
+        self.backgroundLayer = CAShapeLayer()
+        self.loopLayer = CAShapeLayer()
+        self.backgroundLayer.frame = bounds
+        self.loopLayer.frame = bounds
+        layer.addSublayer(self.backgroundLayer)
+        layer.addSublayer(self.loopLayer)
     }
     
     func configurePath() {
@@ -44,16 +44,16 @@ class RPLodingView: UIView {
                                 startAngle: -CGFloat.pi / 2,
                                 endAngle: CGFloat.pi * 3 / 2,
                                 clockwise: true)
-        backgroundShapeLayer.path = path.cgPath
-        backgroundShapeLayer.strokeColor = UIColor.init(red: 205/255, green: 205/255, blue: 205/255, alpha: 1).cgColor
-        backgroundShapeLayer.fillColor = UIColor.clear.cgColor
-        backgroundShapeLayer.lineWidth = 2
-        backgroundShapeLayer.strokeStart = 0.0
-        backgroundShapeLayer.strokeEnd = 1.0
+        self.backgroundLayer.path = path.cgPath
+        self.backgroundLayer.strokeColor = UIColor.init(red: 205/255, green: 205/255, blue: 205/255, alpha: 1).cgColor
+        self.backgroundLayer.fillColor = UIColor.clear.cgColor
+        self.backgroundLayer.lineWidth = 2
+        self.backgroundLayer.strokeStart = 0.0
+        self.backgroundLayer.strokeEnd = 1.0
         let startPath = UIBezierPath(arcCenter: CGPoint(x: radius, y: radius), radius: radius, startAngle:0, endAngle: CGFloat.pi / 3, clockwise: true)
-        progressShapeLayer.path = startPath.cgPath
-        progressShapeLayer.fillColor = UIColor.clear.cgColor
-        progressShapeLayer.lineWidth = 2
+        self.loopLayer.path = startPath.cgPath
+        self.loopLayer.fillColor = UIColor.clear.cgColor
+        self.loopLayer.lineWidth = 2
         
         path.stroke()
     }
@@ -64,7 +64,7 @@ class RPLodingView: UIView {
     }
     
     func configureAnimation() {
-        progressShapeLayer.strokeColor = UIColor.black.cgColor
+        self.loopLayer.strokeColor = UIColor.black.cgColor
         let animation = CABasicAnimation(keyPath: "transform.rotation.z")
         animation.repeatCount = .greatestFiniteMagnitude
         animation.duration = 1.0
