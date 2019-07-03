@@ -29,12 +29,13 @@ public class RPToastView:  NSObject {
     
     static var toastView : RPSubToastView!
 
-    public static func show(mode: toastMode, isView: UIView? = nil, text: String? = nil, showTime: Float? = nil) {
+    public static func show(mode: toastMode, isView: UIView? = nil, text: String? = nil, showTime: Float? = nil, dimBackground: Bool? = nil) {
         DispatchQueue.main.async {
             let addView = isView ?? (UIApplication.shared.keyWindow ?? UIView())
             let title = text ?? ""
             let time = showTime ?? 1.5
-            self.toastView = RPSubToastView.init(mode: mode, isView: addView, text: title, showTime: time)
+            let isBackground = dimBackground ?? true
+            self.toastView = RPSubToastView.init(mode: mode, isView: addView, text: title, showTime: time, dimBackground: isBackground)
             self.toastView.showRootView(isShow: true)
         }
     }

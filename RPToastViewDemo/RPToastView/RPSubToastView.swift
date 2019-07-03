@@ -65,13 +65,13 @@ class RPSubToastView: UIView {
     // MARK: - init UI
     override init(frame: CGRect) {
         super.init(frame: frame)
-        configRootView()
     }
     
-    convenience init(mode: toastMode, isView: UIView, text: String?, showTime: Float){
+    convenience init(mode: toastMode, isView: UIView, text: String?, showTime: Float, dimBackground: Bool?){
         self.init()
         self.mode = mode
         self.showTime = showTime
+        configRootView(isDim: dimBackground)
         configUI(isView: isView)
         configCenterView(mode: mode, text: text)
     }
@@ -90,7 +90,7 @@ class RPSubToastView: UIView {
         self.bottomAnchor.constraint(equalTo: isView.bottomAnchor, constant: 0).isActive = true
     }
     
-    func configRootView() {
+    func configRootView(isDim: Bool?) {
         self.rootView = UIView.init()
         self.addSubview(self.rootView)
         self.rootView.translatesAutoresizingMaskIntoConstraints = false
@@ -98,7 +98,9 @@ class RPSubToastView: UIView {
         self.rootView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0).isActive = true
         self.rootView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
         self.rootView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
-        self.rootView.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.3)
+        if isDim == false {
+            self.rootView.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.3)
+        }
         self.rootView.isHidden = true
     }
     
