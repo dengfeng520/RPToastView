@@ -11,8 +11,6 @@
 		1D0E0BA025077FE40035FF8E /* RPSubToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDA4F5D22C609DE00A99C9A /* RPSubToastView.swift */; };
 		1D0E0BA125077FE40035FF8E /* RPToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDA4F5E22C609DE00A99C9A /* RPToastView.swift */; };
 		1D0E0BA225077FE40035FF8E /* RPLoadingDrakMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D487311250757F40049344D /* RPLoadingDrakMode.swift */; };
-		1D0E0BA325077FFD0035FF8E /* RPToastView.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9EDA4F5E22C609DE00A99C9A /* RPToastView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D0E0BA425077FFD0035FF8E /* RPLoadingDrakMode.swift in Headers */ = {isa = PBXBuildFile; fileRef = 1D487311250757F40049344D /* RPLoadingDrakMode.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D487312250757F40049344D /* RPLoadingDrakMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D487311250757F40049344D /* RPLoadingDrakMode.swift */; };
 		9EDA4F4B22C609B700A99C9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDA4F4A22C609B700A99C9A /* AppDelegate.swift */; };
 		9EDA4F4D22C609B700A99C9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDA4F4C22C609B700A99C9A /* ViewController.swift */; };
@@ -143,8 +141,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D0E0BA325077FFD0035FF8E /* RPToastView.swift in Headers */,
-				1D0E0BA425077FFD0035FF8E /* RPLoadingDrakMode.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,11 +8,11 @@
   "tvOS" : [
 
   ],
-  "commitish" : "0f7fddecdbec13a4042c39c3b69c672c4d42b24d",
+  "commitish" : "1.5.1",
   "iOS" : [
     {
       "name" : "RPToastView",
-      "hash" : "b15ebc45569fb4bcd27ddd74ee035b9292eeb41ffad4c1e1d77edd79a3926feb",
+      "hash" : "91d201156a68989353dd2442040e61cec7d4ef0dabd96faf769797c2623e58dd",
       "swiftToolchainVersion" : "5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)"
     }
   ]
