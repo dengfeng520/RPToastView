@@ -3,7 +3,7 @@
 //  RPToastViewDemo
 //
 //  Created by rp.wang on 2019/7/1.
-//  Copyright © 2019 西安乐推网络科技有限公司. All rights reserved.
+//  Copyright © 2019 Beijing Physical Fitness Sport Science and Technology Co.,Ltd. All rights reserved.
 //
 
 import UIKit
@@ -45,7 +45,7 @@ class RPLodingView: UIView {
                                 endAngle: CGFloat.pi * 3 / 2,
                                 clockwise: true)
         self.backgroundLayer.path = path.cgPath
-        self.backgroundLayer.strokeColor = UIColor.init(red: 205/255, green: 205/255, blue: 205/255, alpha: 1).cgColor
+        self.backgroundLayer.strokeColor = UIColor(red: 205/255, green: 205/255, blue: 205/255, alpha: 1).cgColor
         self.backgroundLayer.fillColor = UIColor.clear.cgColor
         self.backgroundLayer.lineWidth = 2
         self.backgroundLayer.strokeStart = 0.0
@@ -87,9 +87,9 @@ class RPLodingView: UIView {
 // MARK: - CAAnimationDelegate
 extension RPLodingView: CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
-        self.end()
-        if self.clouse != nil {
-            self.clouse!()
+        end()
+        if let clouse = clouse {
+            clouse()
         }
     }
 }

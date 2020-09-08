@@ -2,7 +2,7 @@
 //  CatchU
 //
 //  Created by rp.wang on 2019/7/4.
-//  Copyright © 2019 西安博信信息科技有限公司. All rights reserved.
+//  Copyright © 2019 Beijing Physical Fitness Sport Science and Technology Co.,Ltd. All rights reserved.
 //
 
 #import "LTToastView.h"
@@ -12,7 +12,7 @@
 @interface LTToastView ()
 
 @property (strong, nonatomic) UILabel *contextLab;
-///判断视图是否已经加载
+/// 判断视图是否已经加载
 @property (nonatomic, assign, getter=hasFinished) BOOL finished;
 
 @end

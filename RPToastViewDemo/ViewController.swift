@@ -3,7 +3,7 @@
 //  RPToastViewDemo
 //
 //  Created by rp.wang on 2019/6/28.
-//  Copyright © 2019 西安乐推网络科技有限公司. All rights reserved.
+//  Copyright © 2019 Beijing Physical Fitness Sport Science and Technology Co.,Ltd. All rights reserved.
 //
 
 import UIKit
@@ -50,7 +50,7 @@ extension ViewController: UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
         case 0:
-            RPToastView.show(mode: .onlyTextMode, isView:self.view, text: "Loading....")
+            RPToastView.show(mode: .onlyTextMode, isView:self.view, text: "Loading....", dimBackground:false)
             break
         case 1:
             RPToastView.show(mode: .indeterminateMode, isView:self.view)

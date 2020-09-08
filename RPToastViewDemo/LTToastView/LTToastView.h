@@ -3,7 +3,7 @@
 //  CatchU
 //
 //  Created by rp.wang on 2019/7/4.
-//  Copyright © 2019 西安博信信息科技有限公司. All rights reserved.
+//  Copyright © 2019 Beijing Physical Fitness Sport Science and Technology Co.,Ltd. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

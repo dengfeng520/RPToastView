@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D487312250757F40049344D /* RPLoadingDrakMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D487311250757F40049344D /* RPLoadingDrakMode.swift */; };
 		1D91862423029202003AAC93 /* LTToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D91862223029202003AAC93 /* LTToastView.m */; };
 		9EDA4F4B22C609B700A99C9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDA4F4A22C609B700A99C9A /* AppDelegate.swift */; };
 		9EDA4F4D22C609B700A99C9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDA4F4C22C609B700A99C9A /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D487311250757F40049344D /* RPLoadingDrakMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPLoadingDrakMode.swift; sourceTree = "<group>"; };
 		1D91862223029202003AAC93 /* LTToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTToastView.m; sourceTree = "<group>"; };
 		1D91862323029202003AAC93 /* LTToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTToastView.h; sourceTree = "<group>"; };
 		9EDA4F4722C609B700A99C9A /* RPToastViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPToastViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +92,7 @@
 				9EDAB56122C9AAF800C05CEC /* RPLodingView.swift */,
 				9EDA4F5D22C609DE00A99C9A /* RPSubToastView.swift */,
 				9EDA4F5E22C609DE00A99C9A /* RPToastView.swift */,
+				1D487311250757F40049344D /* RPLoadingDrakMode.swift */,
 			);
 			path = RPToastView;
 			sourceTree = "<group>";
@@ -120,9 +123,10 @@
 		9EDA4F3F22C609B700A99C9A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = "";
 				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = "西安乐推网络科技有限公司";
+				ORGANIZATIONNAME = "Beijing Physical Fitness Sport Science and Technology Co.,Ltd.";
 				TargetAttributes = {
 					9EDA4F4622C609B700A99C9A = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -165,6 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D487312250757F40049344D /* RPLoadingDrakMode.swift in Sources */,
 				9EDA4F6022C609DE00A99C9A /* RPToastView.swift in Sources */,
 				9EDA4F4D22C609B700A99C9A /* ViewController.swift in Sources */,
 				1D91862423029202003AAC93 /* LTToastView.m in Sources */,
@@ -317,13 +322,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4YVYE7D3L5;
+				DEVELOPMENT_TEAM = 7ZY8N8FFCN;
 				INFOPLIST_FILE = RPToastViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "------------.RPToastViewDemo";
+				PRODUCT_BUNDLE_IDENTIFIER = "-----------------.RPToastViewDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -335,13 +340,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4YVYE7D3L5;
+				DEVELOPMENT_TEAM = 7ZY8N8FFCN;
 				INFOPLIST_FILE = RPToastViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "------------.RPToastViewDemo";
+				PRODUCT_BUNDLE_IDENTIFIER = "-----------------.RPToastViewDemo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

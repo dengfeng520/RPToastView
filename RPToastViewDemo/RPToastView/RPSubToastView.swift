@@ -3,7 +3,7 @@
 //  One-Swift
 //
 //  Created by rp.wang on 2019/6/18.
-//  Copyright © 2019 西安乐推网络科技有限公司. All rights reserved.
+//  Copyright © 2019 Beijing Physical Fitness Sport Science and Technology Co.,Ltd. All rights reserved.
 //
 
 import UIKit
@@ -20,44 +20,45 @@ class RPSubToastView: UIView {
     // MARK: -  Lazy
     lazy var titleLab: UILabel = {
         let titleLab = UILabel.init()
-        self.centerView.addSubview(titleLab)
+        centerView.addSubview(titleLab)
         titleLab.translatesAutoresizingMaskIntoConstraints = false
-        titleLab.leftAnchor.constraint(equalTo: self.centerView.leftAnchor, constant: 8).isActive = true
-        titleLab.rightAnchor.constraint(equalTo: self.centerView.rightAnchor, constant: -8).isActive = true
+        titleLab.leftAnchor.constraint(equalTo: centerView.leftAnchor, constant: 8).isActive = true
+        titleLab.rightAnchor.constraint(equalTo: centerView.rightAnchor, constant: -8).isActive = true
         titleLab.heightAnchor.constraint(greaterThanOrEqualToConstant: 25).isActive = true
         titleLab.widthAnchor.constraint(greaterThanOrEqualToConstant: 120).isActive = true
-        titleLab.widthAnchor.constraint(lessThanOrEqualTo: self.rootView.widthAnchor, multiplier: 0.75).isActive = true
-        titleLab.bottomAnchor.constraint(equalTo: centerView!.bottomAnchor, constant: -8).isActive = true
+        titleLab.widthAnchor.constraint(lessThanOrEqualTo: rootView.widthAnchor, multiplier: 0.75).isActive = true
+        titleLab.bottomAnchor.constraint(equalTo: centerView.bottomAnchor, constant: -12).isActive = true
         titleLab.numberOfLines = 0
         titleLab.font = UIFont.boldSystemFont(ofSize: 15)
         titleLab.textAlignment = .center
-        titleLab.textColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.75)
+        titleLab.textColor = .titleDarkModeTxtColorWith(UIColor(red: 0, green: 0, blue: 0, alpha: 0.75))
         return titleLab
     }()
     
     lazy var activityView: UIActivityIndicatorView = {
         let activityView = UIActivityIndicatorView.init(style: .whiteLarge)
-        self.centerView.addSubview(activityView)
+        centerView.addSubview(activityView)
         activityView.translatesAutoresizingMaskIntoConstraints = false
-        self.activityCenterY = activityView.centerYAnchor.constraint(equalTo: self.centerView.centerYAnchor, constant: 0)
-        self.activityCenterY.isActive = true
-        activityView.centerXAnchor.constraint(equalTo: centerView!.centerXAnchor, constant: 0).isActive = true
-        activityView.color = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.75)
+        activityCenterY = activityView.centerYAnchor.constraint(equalTo: centerView.centerYAnchor, constant: 0)
+        activityCenterY.isActive = true
+        activityView.centerXAnchor.constraint(equalTo: centerView.centerXAnchor, constant: 0).isActive = true
+        activityView.color = .activityDarkModeColor
         return activityView
     }()
     
     
     lazy var loopView: RPLodingView = {
         let loopView = RPLodingView.init(frame: CGRect.zero)
-        self.centerView.addSubview(loopView)
+        centerView.addSubview(loopView)
         loopView.translatesAutoresizingMaskIntoConstraints = false
-        self.loopCenterY = loopView.centerYAnchor.constraint(equalTo: self.centerView.centerYAnchor, constant: 0)
-        self.loopCenterY.isActive = true
-        loopView.centerXAnchor.constraint(equalTo: self.centerView.centerXAnchor, constant: 0).isActive = true
+        loopCenterY = loopView.centerYAnchor.constraint(equalTo: centerView.centerYAnchor, constant: 0)
+        loopCenterY.isActive = true
+        loopView.centerXAnchor.constraint(equalTo: centerView.centerXAnchor, constant: 0).isActive = true
         loopView.widthAnchor.constraint(equalToConstant: 36).isActive = true
         loopView.heightAnchor.constraint(equalToConstant: 36).isActive = true
         loopView.clouse = { [weak self] in
-            self?.dismiss(isAnimation: true)
+            guard let `self` = self else { return }
+            self.dismiss(isAnimation: true)
         }
         return loopView
     }()
@@ -67,7 +68,7 @@ class RPSubToastView: UIView {
         super.init(frame: frame)
     }
     
-    convenience init(mode: toastMode, isView: UIView, text: String?, showTime: Float, dimBackground: Bool?){
+    convenience init(mode: toastMode, isView: UIView, text: String?, showTime: Float, dimBackground: Bool?) {
         self.init()
         self.mode = mode
         self.showTime = showTime
@@ -91,28 +92,27 @@ class RPSubToastView: UIView {
     }
     
     func configRootView(isDim: Bool?) {
-        self.rootView = UIView.init()
-        self.addSubview(self.rootView)
-        self.rootView.translatesAutoresizingMaskIntoConstraints = false
-        self.rootView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
-        self.rootView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0).isActive = true
-        self.rootView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
-        self.rootView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
+        rootView = UIView.init()
+        self.addSubview(rootView)
+        rootView.translatesAutoresizingMaskIntoConstraints = false
+        rootView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
+        rootView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0).isActive = true
+        rootView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
+        rootView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0).isActive = true
         if isDim == false {
-            self.rootView.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.3)
+            rootView.backgroundColor = .subDarkModeViewColor
         }
-        self.rootView.isHidden = true
+        rootView.isHidden = true
     }
     
     func configCenterView() {
-        self.centerView = UIView.init()
-        self.rootView.addSubview(self.centerView!)
-        self.centerView.backgroundColor = UIColor.groupTableViewBackground
-        self.centerView.translatesAutoresizingMaskIntoConstraints = false
-        self.centerView.layer.cornerRadius = 10
-        self.centerView.centerXAnchor.constraint(equalTo: self.rootView.centerXAnchor, constant: 0).isActive = true
-        self.centerView.centerYAnchor.constraint(equalTo: self.rootView.centerYAnchor, constant: 0).isActive = true
-    
+        centerView = UIView.init()
+        rootView.addSubview(centerView!)
+        centerView.backgroundColor = .darkModeViewColor
+        centerView.translatesAutoresizingMaskIntoConstraints = false
+        centerView.layer.cornerRadius = 10
+        centerView.centerXAnchor.constraint(equalTo: rootView.centerXAnchor, constant: 0).isActive = true
+        centerView.centerYAnchor.constraint(equalTo: rootView.centerYAnchor, constant: 0).isActive = true
     }
     
     func configCenterView(mode: toastMode, text: String?) {
@@ -126,14 +126,14 @@ class RPSubToastView: UIView {
         }else if mode == .loopAndTextMode {
             configLoopAndTextModeUI(text: text!)
         } else {
-            self.centerView.widthAnchor.constraint(greaterThanOrEqualToConstant: 120).isActive = true
-            self.centerView.heightAnchor.constraint(greaterThanOrEqualToConstant: 120).isActive = true
+            centerView.widthAnchor.constraint(greaterThanOrEqualToConstant: 120).isActive = true
+            centerView.heightAnchor.constraint(greaterThanOrEqualToConstant: 120).isActive = true
         }
-        self.centerView.isHidden = true
+        centerView.isHidden = true
     }
     
     deinit {
-        print("===============free memory")
+        print("===================deinit")
     }
 }
 
@@ -141,16 +141,17 @@ class RPSubToastView: UIView {
 extension RPSubToastView {
     
     func configIndeterminateModeUI() {
-        self.centerView.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        self.centerView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        self.activityView.startAnimating()
+        centerView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        centerView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        activityView.startAnimating()
     }
     
     func configOnlyTextOrMixedModeUI(mode: toastMode, text: String) {
-        self.centerView.widthAnchor.constraint(greaterThanOrEqualToConstant: 70).isActive = true
-        self.centerView.heightAnchor.constraint(greaterThanOrEqualToConstant: 44).isActive = true
-        self.centerView.widthAnchor.constraint(lessThanOrEqualTo: self.rootView.widthAnchor, multiplier: 0.8).isActive = true
-        self.titleLab.text = text;
+        titleLab.text = text
+        
+        centerView.widthAnchor.constraint(greaterThanOrEqualToConstant: 70).isActive = true
+        centerView.heightAnchor.constraint(greaterThanOrEqualToConstant: 70).isActive = true
+        centerView.widthAnchor.constraint(lessThanOrEqualTo: rootView.widthAnchor, multiplier: 0.8).isActive = true
         
         if mode == .onlyTextMode {
             configOnlyTextModeUI()
@@ -160,25 +161,23 @@ extension RPSubToastView {
     }
     
     func configOnlyTextModeUI() {
-        self.titleLab.topAnchor.constraint(equalTo: self.centerView.topAnchor, constant: 12).isActive = true
-        self.titleLab.centerYAnchor .constraint(equalTo: self.centerView.centerYAnchor, constant: 0).isActive = true
+        titleLab.topAnchor.constraint(equalTo: centerView.topAnchor, constant: 12).isActive = true
+        titleLab.centerYAnchor .constraint(equalTo: centerView.centerYAnchor, constant: 0).isActive = true
         dismiss(isAnimation: true)
     }
     
     func configMixedModeUI() {
-        self.activityView.removeConstraint(self.activityCenterY)
-        self.activityView.topAnchor.constraint(equalTo: self.centerView.topAnchor, constant: 20).isActive = true
-        self.activityView.startAnimating()
+        activityView.startAnimating()
+        activityCenterY.constant = -12
         
-        self.titleLab.topAnchor.constraint(equalTo: self.activityView.bottomAnchor, constant: 15).isActive = true
+        titleLab.topAnchor.constraint(equalTo: activityView.bottomAnchor, constant: 10).isActive = true
     }
     
     func configLoopModeUI() {
-        self.centerView.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        self.centerView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        centerView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        centerView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         
-        
-        self.loopView.start()
+        loopView.start()
     }
     
     func configLoopAndTextModeUI(text: String) {
@@ -189,8 +188,8 @@ extension RPSubToastView {
         self.titleLab.text = text;
         
         self.loopView.removeConstraint(self.loopCenterY)
-        self.loopView.topAnchor.constraint(equalTo: self.centerView.topAnchor, constant: 20).isActive = true
-        self.loopView.bottomAnchor.constraint(equalTo: self.titleLab.topAnchor, constant: -15).isActive = true
+        self.loopView.topAnchor.constraint(equalTo: centerView.topAnchor, constant: 20).isActive = true
+        self.loopView.bottomAnchor.constraint(equalTo: titleLab.topAnchor, constant: -15).isActive = true
         self.loopView.start()
     }
     

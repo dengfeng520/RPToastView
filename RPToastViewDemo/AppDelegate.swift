@@ -3,7 +3,7 @@
 //  RPToastViewDemo
 //
 //  Created by rp.wang on 2019/6/28.
-//  Copyright © 2019 西安乐推网络科技有限公司. All rights reserved.
+//  Copyright © 2019 Beijing Physical Fitness Sport Science and Technology Co.,Ltd. All rights reserved.
 //
 
 import UIKit
