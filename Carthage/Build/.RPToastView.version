@@ -8,11 +8,11 @@
   "tvOS" : [
 
   ],
-  "commitish" : "937d9e166b5e1b1349b3d93f0acf0c85b3fbb798",
+  "commitish" : "d7a4ad23ec2bffa9c3654e6c27e8878d54395168",
   "iOS" : [
     {
       "name" : "RPToastView",
-      "hash" : "9bc17f5167d97446d82eb6ed4a603e46d44e3be3365e1ee7e76c4ee476dac6c8"
+      "hash" : "66869df5bb0194b39170c2bc9239673a6840ecefa6e75dd690d6ca86c6424912"
     }
   ]
 }
