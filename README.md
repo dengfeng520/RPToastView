@@ -48,8 +48,6 @@ import RPToastView
 <h3>Carthage</h3>
 
 
-**Carthage and Carthage is the recommended way to add RPToastView to your project.**
-
 **1、Opne terminal**
 
 ```
