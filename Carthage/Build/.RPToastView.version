@@ -1,0 +1,18 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "8de54ccff5737f58c282af9c6ea5a201aa0cd054",
+  "iOS" : [
+    {
+      "name" : "RPToastView",
+      "hash" : "4762f1327a473bcae6376cf3831fdc0abeba62629a66c60bba42ac21b635485f"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+framework module RPToastView {
+  umbrella header "RPToastView.h"
+
+  export *
+  module * { export * }
+}
