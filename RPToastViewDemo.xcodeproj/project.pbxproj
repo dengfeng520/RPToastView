@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D0E0B702507787F0035FF8E /* RPToastView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D0E0B6E2507787F0035FF8E /* RPToastView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D0E0B74250778C90035FF8E /* RPToastView.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9EDA4F5E22C609DE00A99C9A /* RPToastView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D0E0B75250778C90035FF8E /* RPLoadingDrakMode.swift in Headers */ = {isa = PBXBuildFile; fileRef = 1D487311250757F40049344D /* RPLoadingDrakMode.swift */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D0E0B76250778F40035FF8E /* RPLodingView.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9EDAB56122C9AAF800C05CEC /* RPLodingView.swift */; };
-		1D0E0B77250778F40035FF8E /* RPSubToastView.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9EDA4F5D22C609DE00A99C9A /* RPSubToastView.swift */; };
+		1D0E0B9F25077FE40035FF8E /* RPLodingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDAB56122C9AAF800C05CEC /* RPLodingView.swift */; };
+		1D0E0BA025077FE40035FF8E /* RPSubToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDA4F5D22C609DE00A99C9A /* RPSubToastView.swift */; };
+		1D0E0BA125077FE40035FF8E /* RPToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDA4F5E22C609DE00A99C9A /* RPToastView.swift */; };
+		1D0E0BA225077FE40035FF8E /* RPLoadingDrakMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D487311250757F40049344D /* RPLoadingDrakMode.swift */; };
+		1D0E0BA325077FFD0035FF8E /* RPToastView.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9EDA4F5E22C609DE00A99C9A /* RPToastView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D0E0BA425077FFD0035FF8E /* RPLoadingDrakMode.swift in Headers */ = {isa = PBXBuildFile; fileRef = 1D487311250757F40049344D /* RPLoadingDrakMode.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D487312250757F40049344D /* RPLoadingDrakMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D487311250757F40049344D /* RPLoadingDrakMode.swift */; };
-		1D91862423029202003AAC93 /* LTToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D91862223029202003AAC93 /* LTToastView.m */; };
 		9EDA4F4B22C609B700A99C9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDA4F4A22C609B700A99C9A /* AppDelegate.swift */; };
 		9EDA4F4D22C609B700A99C9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDA4F4C22C609B700A99C9A /* ViewController.swift */; };
 		9EDA4F5022C609B700A99C9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EDA4F4E22C609B700A99C9A /* Main.storyboard */; };
@@ -44,8 +44,6 @@
 		1D0E0B6E2507787F0035FF8E /* RPToastView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPToastView.h; sourceTree = "<group>"; };
 		1D0E0B6F2507787F0035FF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D487311250757F40049344D /* RPLoadingDrakMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPLoadingDrakMode.swift; sourceTree = "<group>"; };
-		1D91862223029202003AAC93 /* LTToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTToastView.m; sourceTree = "<group>"; };
-		1D91862323029202003AAC93 /* LTToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTToastView.h; sourceTree = "<group>"; };
 		9EDA4F4722C609B700A99C9A /* RPToastViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPToastViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EDA4F4A22C609B700A99C9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EDA4F4C22C609B700A99C9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,15 +92,6 @@
 			path = RPToastView;
 			sourceTree = "<group>";
 		};
-		1D91862123029202003AAC93 /* LTToastView */ = {
-			isa = PBXGroup;
-			children = (
-				1D91862323029202003AAC93 /* LTToastView.h */,
-				1D91862223029202003AAC93 /* LTToastView.m */,
-			);
-			path = LTToastView;
-			sourceTree = "<group>";
-		};
 		9EDA4F3E22C609B700A99C9A = {
 			isa = PBXGroup;
 			children = (
@@ -125,7 +114,6 @@
 		9EDA4F4922C609B700A99C9A /* RPToastViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				1D91862123029202003AAC93 /* LTToastView */,
 				9EDA4F5C22C609C200A99C9A /* RPToastView */,
 				9EDA4F4A22C609B700A99C9A /* AppDelegate.swift */,
 				9EDA4F4C22C609B700A99C9A /* ViewController.swift */,
@@ -155,11 +143,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D0E0B702507787F0035FF8E /* RPToastView.h in Headers */,
-				1D0E0B74250778C90035FF8E /* RPToastView.swift in Headers */,
-				1D0E0B75250778C90035FF8E /* RPLoadingDrakMode.swift in Headers */,
-				1D0E0B76250778F40035FF8E /* RPLodingView.swift in Headers */,
-				1D0E0B77250778F40035FF8E /* RPSubToastView.swift in Headers */,
+				1D0E0BA325077FFD0035FF8E /* RPToastView.swift in Headers */,
+				1D0E0BA425077FFD0035FF8E /* RPLoadingDrakMode.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +250,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D0E0B9F25077FE40035FF8E /* RPLodingView.swift in Sources */,
+				1D0E0BA025077FE40035FF8E /* RPSubToastView.swift in Sources */,
+				1D0E0BA125077FE40035FF8E /* RPToastView.swift in Sources */,
+				1D0E0BA225077FE40035FF8E /* RPLoadingDrakMode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,7 +264,6 @@
 				1D487312250757F40049344D /* RPLoadingDrakMode.swift in Sources */,
 				9EDA4F6022C609DE00A99C9A /* RPToastView.swift in Sources */,
 				9EDA4F4D22C609B700A99C9A /* ViewController.swift in Sources */,
-				1D91862423029202003AAC93 /* LTToastView.m in Sources */,
 				9EDA4F4B22C609B700A99C9A /* AppDelegate.swift in Sources */,
 				9EDAB56222C9AAF800C05CEC /* RPLodingView.swift in Sources */,
 				9EDA4F5F22C609DE00A99C9A /* RPSubToastView.swift in Sources */,
