@@ -50,28 +50,28 @@ extension ViewController: UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
         case 0:
-            RPToastView.show(mode: .onlyTextMode, isView:self.view, text: "Loading....", dimBackground:false)
+            RPToastView.loading(Display.init(mode: .onlyTextMode, isView: self.view, title: "Loading...", dimBackground: false))
             break
         case 1:
-            RPToastView.show(mode: .indeterminateMode, isView:self.view)
+            RPToastView.loading(Display(mode: .indeterminateMode, isView: self.view))
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
                 RPToastView.hidden(animation: true)
             }
             break
         case 2:
-            RPToastView.show(mode: .mixedMode, isView:self.view, text: "Loading....")
+            RPToastView.loading(Display(mode: .mixedMode, isView: self.view, title: "Loading...", dimBackground: false))
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
                 RPToastView.hidden(animation: true)
             }
             break
         case 3:
-            RPToastView.show(mode: .loopMode, isView:self.view)
+            RPToastView.loading(Display(mode: .loopMode, isView: self.view))
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
                 RPToastView.hidden(animation: true)
             }
             break
         case 4:
-            RPToastView.show(mode: .loopAndTextMode, isView:self.view, text: "Loading....")
+            RPToastView.loading(Display(mode: .loopAndTextMode, isView: self.view, title: "Loading...."))
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
                 RPToastView.hidden(animation: true)
             }
