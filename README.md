@@ -17,7 +17,9 @@
 
 <h2>Adding RPToastView to your project</h2>
 
-**CocoaPods is the recommended way to add RPToastView to your project.**
+**Carthage or CocoaPods is the recommended way to add RPToastView to your project.**
+
+<h3> CocoaPods </h3>
 
 **1、Add a pod entry for RPToastView to your project Podfile**
 
@@ -43,6 +45,32 @@ pod install
 import RPToastView
 ```
 
+<h3>Carthage</h3>
+
+
+**Carthage and Carthage is the recommended way to add RPToastView to your project.**
+
+**1、Opne terminal**
+
+```
+cd ../projectName
+touch Cartfile
+```
+**2、 Open Cartfile**
+
+```
+github "dengfeng520/RPToastView"
+```
+**3、Perform update**
+
+```
+carthage update --platform iOS
+```
+After the building is completed，include RPToastView wherever you need it class with.
+
+```
+import RPToastView
+```
 
 <h2>Usage</h2>
 
