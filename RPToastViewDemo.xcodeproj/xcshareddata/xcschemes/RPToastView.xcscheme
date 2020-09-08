@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D0E0B19250773EF0035FF8E"
+               BlueprintIdentifier = "1D0E0B6B2507787F0035FF8E"
                BuildableName = "RPToastView.framework"
                BlueprintName = "RPToastView"
                ReferencedContainer = "container:RPToastViewDemo.xcodeproj">
@@ -50,7 +50,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D0E0B19250773EF0035FF8E"
+            BlueprintIdentifier = "1D0E0B6B2507787F0035FF8E"
             BuildableName = "RPToastView.framework"
             BlueprintName = "RPToastView"
             ReferencedContainer = "container:RPToastViewDemo.xcodeproj">

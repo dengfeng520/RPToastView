@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D0E0B1E250773EF0035FF8E /* RPToastView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D0E0B1C250773EF0035FF8E /* RPToastView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D0E0B21250773EF0035FF8E /* RPToastView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0E0B1A250773EF0035FF8E /* RPToastView.framework */; };
-		1D0E0B22250773EF0035FF8E /* RPToastView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0E0B1A250773EF0035FF8E /* RPToastView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1D0E0B702507787F0035FF8E /* RPToastView.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D0E0B6E2507787F0035FF8E /* RPToastView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D0E0B74250778C90035FF8E /* RPToastView.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9EDA4F5E22C609DE00A99C9A /* RPToastView.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D0E0B75250778C90035FF8E /* RPLoadingDrakMode.swift in Headers */ = {isa = PBXBuildFile; fileRef = 1D487311250757F40049344D /* RPLoadingDrakMode.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D0E0B76250778F40035FF8E /* RPLodingView.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9EDAB56122C9AAF800C05CEC /* RPLodingView.swift */; };
+		1D0E0B77250778F40035FF8E /* RPSubToastView.swift in Headers */ = {isa = PBXBuildFile; fileRef = 9EDA4F5D22C609DE00A99C9A /* RPSubToastView.swift */; };
 		1D487312250757F40049344D /* RPLoadingDrakMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D487311250757F40049344D /* RPLoadingDrakMode.swift */; };
 		1D91862423029202003AAC93 /* LTToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D91862223029202003AAC93 /* LTToastView.m */; };
 		9EDA4F4B22C609B700A99C9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDA4F4A22C609B700A99C9A /* AppDelegate.swift */; };
@@ -22,16 +24,6 @@
 		9EDAB56222C9AAF800C05CEC /* RPLodingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDAB56122C9AAF800C05CEC /* RPLodingView.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		1D0E0B1F250773EF0035FF8E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9EDA4F3F22C609B700A99C9A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1D0E0B19250773EF0035FF8E;
-			remoteInfo = RPToastView;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		1D0E0B23250773EF0035FF8E /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -39,7 +31,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1D0E0B22250773EF0035FF8E /* RPToastView.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,9 +38,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1D0E0B1A250773EF0035FF8E /* RPToastView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RPToastView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D0E0B1C250773EF0035FF8E /* RPToastView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPToastView.h; sourceTree = "<group>"; };
 		1D0E0B1D250773EF0035FF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D0E0B6C2507787F0035FF8E /* RPToastView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RPToastView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D0E0B6E2507787F0035FF8E /* RPToastView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RPToastView.h; sourceTree = "<group>"; };
+		1D0E0B6F2507787F0035FF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D487311250757F40049344D /* RPLoadingDrakMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPLoadingDrakMode.swift; sourceTree = "<group>"; };
 		1D91862223029202003AAC93 /* LTToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTToastView.m; sourceTree = "<group>"; };
 		1D91862323029202003AAC93 /* LTToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTToastView.h; sourceTree = "<group>"; };
@@ -66,7 +59,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1D0E0B17250773EF0035FF8E /* Frameworks */ = {
+		1D0E0B692507787F0035FF8E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -77,7 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D0E0B21250773EF0035FF8E /* RPToastView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +81,15 @@
 			children = (
 				1D0E0B1C250773EF0035FF8E /* RPToastView.h */,
 				1D0E0B1D250773EF0035FF8E /* Info.plist */,
+			);
+			path = RPToastView;
+			sourceTree = "<group>";
+		};
+		1D0E0B6D2507787F0035FF8E /* RPToastView */ = {
+			isa = PBXGroup;
+			children = (
+				1D0E0B6E2507787F0035FF8E /* RPToastView.h */,
+				1D0E0B6F2507787F0035FF8E /* Info.plist */,
 			);
 			path = RPToastView;
 			sourceTree = "<group>";
@@ -107,6 +108,7 @@
 			children = (
 				9EDA4F4922C609B700A99C9A /* RPToastViewDemo */,
 				1D0E0B1B250773EF0035FF8E /* RPToastView */,
+				1D0E0B6D2507787F0035FF8E /* RPToastView */,
 				9EDA4F4822C609B700A99C9A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -115,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				9EDA4F4722C609B700A99C9A /* RPToastViewDemo.app */,
-				1D0E0B1A250773EF0035FF8E /* RPToastView.framework */,
+				1D0E0B6C2507787F0035FF8E /* RPToastView.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,25 +151,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1D0E0B15250773EF0035FF8E /* Headers */ = {
+		1D0E0B672507787F0035FF8E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D0E0B1E250773EF0035FF8E /* RPToastView.h in Headers */,
+				1D0E0B702507787F0035FF8E /* RPToastView.h in Headers */,
+				1D0E0B74250778C90035FF8E /* RPToastView.swift in Headers */,
+				1D0E0B75250778C90035FF8E /* RPLoadingDrakMode.swift in Headers */,
+				1D0E0B76250778F40035FF8E /* RPLodingView.swift in Headers */,
+				1D0E0B77250778F40035FF8E /* RPSubToastView.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1D0E0B19250773EF0035FF8E /* RPToastView */ = {
+		1D0E0B6B2507787F0035FF8E /* RPToastView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D0E0B26250773EF0035FF8E /* Build configuration list for PBXNativeTarget "RPToastView" */;
+			buildConfigurationList = 1D0E0B712507787F0035FF8E /* Build configuration list for PBXNativeTarget "RPToastView" */;
 			buildPhases = (
-				1D0E0B15250773EF0035FF8E /* Headers */,
-				1D0E0B16250773EF0035FF8E /* Sources */,
-				1D0E0B17250773EF0035FF8E /* Frameworks */,
-				1D0E0B18250773EF0035FF8E /* Resources */,
+				1D0E0B672507787F0035FF8E /* Headers */,
+				1D0E0B682507787F0035FF8E /* Sources */,
+				1D0E0B692507787F0035FF8E /* Frameworks */,
+				1D0E0B6A2507787F0035FF8E /* Resources */,
 			);
 			buildRules = (
 			);
@@ -175,7 +181,7 @@
 			);
 			name = RPToastView;
 			productName = RPToastView;
-			productReference = 1D0E0B1A250773EF0035FF8E /* RPToastView.framework */;
+			productReference = 1D0E0B6C2507787F0035FF8E /* RPToastView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9EDA4F4622C609B700A99C9A /* RPToastViewDemo */ = {
@@ -190,7 +196,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				1D0E0B20250773EF0035FF8E /* PBXTargetDependency */,
 			);
 			name = RPToastViewDemo;
 			productName = RPToastViewDemo;
@@ -208,7 +213,7 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Beijing Physical Fitness Sport Science and Technology Co.,Ltd.";
 				TargetAttributes = {
-					1D0E0B19250773EF0035FF8E = {
+					1D0E0B6B2507787F0035FF8E = {
 						CreatedOnToolsVersion = 11.7;
 					};
 					9EDA4F4622C609B700A99C9A = {
@@ -230,13 +235,13 @@
 			projectRoot = "";
 			targets = (
 				9EDA4F4622C609B700A99C9A /* RPToastViewDemo */,
-				1D0E0B19250773EF0035FF8E /* RPToastView */,
+				1D0E0B6B2507787F0035FF8E /* RPToastView */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1D0E0B18250773EF0035FF8E /* Resources */ = {
+		1D0E0B6A2507787F0035FF8E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -256,7 +261,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1D0E0B16250773EF0035FF8E /* Sources */ = {
+		1D0E0B682507787F0035FF8E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -279,14 +284,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		1D0E0B20250773EF0035FF8E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1D0E0B19250773EF0035FF8E /* RPToastView */;
-			targetProxy = 1D0E0B1F250773EF0035FF8E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
 		9EDA4F4E22C609B700A99C9A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -307,7 +304,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1D0E0B24250773EF0035FF8E /* Debug */ = {
+		1D0E0B722507787F0035FF8E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -335,7 +332,7 @@
 			};
 			name = Debug;
 		};
-		1D0E0B25250773EF0035FF8E /* Release */ = {
+		1D0E0B732507787F0035FF8E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -518,11 +515,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D0E0B26250773EF0035FF8E /* Build configuration list for PBXNativeTarget "RPToastView" */ = {
+		1D0E0B712507787F0035FF8E /* Build configuration list for PBXNativeTarget "RPToastView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1D0E0B24250773EF0035FF8E /* Debug */,
-				1D0E0B25250773EF0035FF8E /* Release */,
+				1D0E0B722507787F0035FF8E /* Debug */,
+				1D0E0B732507787F0035FF8E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
