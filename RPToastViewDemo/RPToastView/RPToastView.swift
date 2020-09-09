@@ -39,7 +39,16 @@ public struct Display: DisplayProtocol {
     public var title: String?
     public var showTime: Float?
     public var dimBackground: Bool?
+    
     static var currentWindows: UIWindow?
+    
+    public init(mode: toastMode? = .indeterminateMode, isView: UIView? = nil, title: String? = "Loading...", showTime: Float? = 1.5, dimBackground: Bool? = true) {
+        self.mode = mode
+        self.isView = isView
+        self.title = title
+        self.showTime = showTime
+        self.dimBackground = dimBackground
+    }
 }
 
 protocol ShowToastProtocol {
@@ -53,7 +62,7 @@ public class RPToastView: ShowToastProtocol {
     public static func loading<T>(_ r: T) where T : DisplayProtocol {
         DispatchQueue.main.async {
             let addView = r.isView ?? (currentWindows ?? UIView())
-            let title = r.title ?? ""
+            let title = r.title ?? "Loading..."
             let time = r.showTime ?? 1.5
             let isBackground = r.dimBackground ?? true
             self.toastView = RPSubToastView(mode: r.mode ?? .indeterminateMode, isView: addView, text: title, showTime: time, dimBackground: isBackground)
