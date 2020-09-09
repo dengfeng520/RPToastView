@@ -2,9 +2,9 @@
 
 <h2>RPToastView</h2>
 
-* iOS 9+
+* iOS 11.0+
 
-* Swift 4.2+
+* Swift 5.0+
 
 * pod V1.7.0+
 
