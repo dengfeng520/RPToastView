@@ -8,14 +8,21 @@
 
 import UIKit
 
-class RPSubToastView: UIView {
-    
+class RPSubToastView: UIView, DisplayProtocol {    
+    var outerLayer: UIColor?
+    var innerLayer: UIColor?
+    var mode: toastMode?
+    var isView: UIView?
+    var title: String?
+    var dimBackground: Bool?
     var rootView: UIView!
     var centerView: UIView!
     var activityCenterY: NSLayoutConstraint!
     var loopCenterY: NSLayoutConstraint!
-    var mode: toastMode!
     var showTime: Float?
+    var bgColor: UIColor?
+    var titleColor: UIColor?
+    var isCustomize: Bool?
     
     // MARK: -  Lazy
     lazy var titleLab: UILabel = {
@@ -31,7 +38,11 @@ class RPSubToastView: UIView {
         titleLab.numberOfLines = 0
         titleLab.font = UIFont.boldSystemFont(ofSize: 15)
         titleLab.textAlignment = .center
-        titleLab.textColor = .titleDarkModeTxtColorWith(UIColor(red: 0, green: 0, blue: 0, alpha: 0.75))
+        if isCustomize == true {
+            titleLab.textColor = self.titleColor
+        } else {
+            titleLab.textColor = .titleDarkModeTxtColorWith(UIColor(red: 0, green: 0, blue: 0, alpha: 0.75))
+        }
         return titleLab
     }()
     
@@ -42,13 +53,24 @@ class RPSubToastView: UIView {
         activityCenterY = activityView.centerYAnchor.constraint(equalTo: centerView.centerYAnchor, constant: 0)
         activityCenterY.isActive = true
         activityView.centerXAnchor.constraint(equalTo: centerView.centerXAnchor, constant: 0).isActive = true
-        activityView.color = .activityDarkModeColor
+        if isCustomize == true {
+            activityView.color = self.titleColor
+        } else {
+            activityView.color = .activityDarkModeColor
+        }
         return activityView
     }()
     
     
     lazy var loopView: RPLodingView = {
-        let loopView = RPLodingView.init(frame: CGRect.zero)
+        let loopView = RPLodingView(frame: CGRect.zero)
+        if isCustomize == true {
+            loopView.isCustomize = isCustomize
+            loopView.outerLayer = outerLayer
+            loopView.innerLayer = innerLayer
+        } else {
+            loopView.isCustomize = false
+        }
         centerView.addSubview(loopView)
         loopView.translatesAutoresizingMaskIntoConstraints = false
         loopCenterY = loopView.centerYAnchor.constraint(equalTo: centerView.centerYAnchor, constant: 0)
@@ -56,6 +78,7 @@ class RPSubToastView: UIView {
         loopView.centerXAnchor.constraint(equalTo: centerView.centerXAnchor, constant: 0).isActive = true
         loopView.widthAnchor.constraint(equalToConstant: 36).isActive = true
         loopView.heightAnchor.constraint(equalToConstant: 36).isActive = true
+        
         loopView.clouse = { [weak self] in
             guard let `self` = self else { return }
             self.dismiss(isAnimation: true)
@@ -68,13 +91,10 @@ class RPSubToastView: UIView {
         super.init(frame: frame)
     }
     
-    convenience init(mode: toastMode, isView: UIView, text: String?, showTime: Float, dimBackground: Bool?) {
-        self.init()
-        self.mode = mode
-        self.showTime = showTime
+    func configToastViewUI() {
         configRootView(isDim: dimBackground)
-        configUI(isView: isView)
-        configCenterView(mode: mode, text: text)
+        configUI(isView: isView!)
+        configCenterView(mode: mode!, text: title!)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -108,23 +128,27 @@ class RPSubToastView: UIView {
     func configCenterView() {
         centerView = UIView.init()
         rootView.addSubview(centerView!)
-        centerView.backgroundColor = .darkModeViewColor
+        if isCustomize == true {
+            centerView.backgroundColor = bgColor
+        } else {
+            centerView.backgroundColor = .darkModeViewColor
+        }
         centerView.translatesAutoresizingMaskIntoConstraints = false
         centerView.layer.cornerRadius = 10
         centerView.centerXAnchor.constraint(equalTo: rootView.centerXAnchor, constant: 0).isActive = true
         centerView.centerYAnchor.constraint(equalTo: rootView.centerYAnchor, constant: 0).isActive = true
     }
     
-    func configCenterView(mode: toastMode, text: String?) {
+    func configCenterView(mode: toastMode, text: String) {
         configCenterView()
         if mode == .indeterminateMode {
             configIndeterminateModeUI()
         } else if mode == .onlyTextMode || mode == .mixedMode {
-            configOnlyTextOrMixedModeUI(mode: mode, text: text!)
+            configOnlyTextOrMixedModeUI(mode: mode, text: text)
         } else if mode == .loopMode {
             configLoopModeUI()
         }else if mode == .loopAndTextMode {
-            configLoopAndTextModeUI(text: text!)
+            configLoopAndTextModeUI(text: text)
         } else {
             centerView.widthAnchor.constraint(greaterThanOrEqualToConstant: 120).isActive = true
             centerView.heightAnchor.constraint(greaterThanOrEqualToConstant: 120).isActive = true

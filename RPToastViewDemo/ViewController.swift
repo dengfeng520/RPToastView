@@ -50,10 +50,14 @@ extension ViewController: UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
         case 0:
-            RPToastView.loading(Display.init(mode: .onlyTextMode, isView: self.view, title: "Loading...", dimBackground: false))
+            RPToastView.loading(Display())
             break
         case 1:
-            RPToastView.loading(Display(mode: .indeterminateMode, isView: self.view))
+            var display = Display()
+            display.mode = .indeterminateMode
+            display.title = "test Loading..."
+            display.isCustomize = true
+            RPToastView.loading(display)
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
                 RPToastView.hidden(animation: true)
             }
@@ -71,7 +75,13 @@ extension ViewController: UITableViewDataSource {
             }
             break
         case 4:
-            RPToastView.loading(Display(mode: .loopAndTextMode, isView: self.view, title: "Loading...."))
+            var display = Display()
+            display.mode = .loopAndTextMode
+            display.title = "this is loop loading..."
+            display.isCustomize = true
+            display.bgColor = UIColor(red: 245.0/255.0, green: 190.0/255.0, blue: 98.0/255.0, alpha: 1)
+            display.titleColor = .white
+            RPToastView.loading(display)
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
                 RPToastView.hidden(animation: true)
             }

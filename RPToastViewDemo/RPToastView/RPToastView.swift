@@ -31,6 +31,15 @@ public protocol DisplayProtocol {
     var title: String? { get }
     var showTime: Float? { get }
     var dimBackground: Bool? { get }
+    // backgroudColor
+    var bgColor: UIColor? { get }
+    var titleColor: UIColor? { get }
+    // 是否自定义颜色
+    var isCustomize: Bool? { get }
+    // 外圈
+    var outerLayer: UIColor? { get }
+    // 内圈
+    var innerLayer: UIColor? { get }
 }
 
 public struct Display: DisplayProtocol {
@@ -39,14 +48,27 @@ public struct Display: DisplayProtocol {
     public var title: String?
     public var showTime: Float?
     public var dimBackground: Bool?
-    
+    public var bgColor: UIColor?
+    public var titleColor: UIColor?
+    public var isCustomize: Bool?
+    // 外圈
+    public var outerLayer: UIColor?
+    // 内圈
+    public var innerLayer: UIColor?
     static var currentWindows: UIWindow?
     
-    public init(mode: toastMode? = .indeterminateMode, isView: UIView? = nil, title: String? = "Loading...", showTime: Float? = 1.5, dimBackground: Bool? = true) {
+    public init() {
+        
+    }
+    
+    public init(mode: toastMode? = .indeterminateMode, isView: UIView? = nil, title: String? = "Loading...", showTime: Float? = 1.5, isCustomize: Bool? = false, bgColor: UIColor? = .groupTableViewBackground, titleColor: UIColor? = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75),  dimBackground: Bool? = true, roundColor: UIColor? = UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)) {
         self.mode = mode
         self.isView = isView
         self.title = title
         self.showTime = showTime
+        self.isCustomize = isCustomize
+        self.bgColor = bgColor
+        self.titleColor = titleColor
         self.dimBackground = dimBackground
     }
 }
@@ -61,12 +83,19 @@ public class RPToastView: ShowToastProtocol {
 
     public static func loading<T>(_ r: T) where T : DisplayProtocol {
         DispatchQueue.main.async {
-            let addView = r.isView ?? (currentWindows ?? UIView())
-            let title = r.title ?? "Loading..."
-            let time = r.showTime ?? 1.5
-            let isBackground = r.dimBackground ?? true
-            self.toastView = RPSubToastView(mode: r.mode ?? .indeterminateMode, isView: addView, text: title, showTime: time, dimBackground: isBackground)
-            self.toastView.showRootView(isShow: true)
+            toastView = RPSubToastView()
+            toastView.mode = r.mode ?? .onlyTextMode
+            toastView.isView = r.isView ?? (currentWindows ?? UIView())
+            toastView.title = r.title ?? "Loading..."
+            toastView.showTime = r.showTime ?? 1.5
+            toastView.dimBackground = r.dimBackground ?? true
+            toastView.isCustomize = r.isCustomize ?? false
+            toastView.bgColor = r.bgColor ?? .darkModeViewColor
+            toastView.titleColor = r.titleColor ?? .titleDrakModeTextColor
+            toastView.outerLayer = r.outerLayer ?? .darkModeViewColor
+            toastView.innerLayer = r.innerLayer ?? .titleDrakModeTextColor
+            toastView.configToastViewUI()
+            toastView.showRootView(isShow: true)
         }
     }
     

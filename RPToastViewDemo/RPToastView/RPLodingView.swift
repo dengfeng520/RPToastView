@@ -16,7 +16,11 @@ class RPLodingView: UIView {
     public var radius: CGFloat = 36 / 2
     private var backgroundLayer: CAShapeLayer!
     private var loopLayer: CAShapeLayer!
-    
+    var isCustomize: Bool!
+    // 外圈
+    var outerLayer: UIColor?
+    // 内圈
+    var innerLayer: UIColor?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,14 +49,31 @@ class RPLodingView: UIView {
                                 endAngle: CGFloat.pi * 3 / 2,
                                 clockwise: true)
         self.backgroundLayer.path = path.cgPath
-        self.backgroundLayer.strokeColor = UIColor(red: 205/255, green: 205/255, blue: 205/255, alpha: 1).cgColor
+        if isCustomize == true {
+            if let outerLayer = outerLayer {
+                self.backgroundLayer.strokeColor = outerLayer.cgColor
+            } else {
+                self.backgroundLayer.strokeColor = UIColor(red: 205/255, green: 205/255, blue: 205/255, alpha: 1).cgColor
+            }
+        } else {
+            self.backgroundLayer.strokeColor = UIColor(red: 205/255, green: 205/255, blue: 205/255, alpha: 1).cgColor
+        }
         self.backgroundLayer.fillColor = UIColor.clear.cgColor
         self.backgroundLayer.lineWidth = 2
         self.backgroundLayer.strokeStart = 0.0
         self.backgroundLayer.strokeEnd = 1.0
-        let startPath = UIBezierPath(arcCenter: CGPoint(x: radius, y: radius), radius: radius, startAngle:0, endAngle: CGFloat.pi / 3, clockwise: true)
+        let startPath = UIBezierPath(arcCenter: CGPoint(x: radius, y: radius), radius: radius, startAngle:0, endAngle: CGFloat.pi / 2, clockwise: true)
         self.loopLayer.path = startPath.cgPath
         self.loopLayer.fillColor = UIColor.clear.cgColor
+        if isCustomize == true {
+            if let innerLayer = innerLayer {
+                self.loopLayer.strokeColor = innerLayer.cgColor
+            } else {
+                self.loopLayer.strokeColor = UIColor.white.cgColor
+            }
+        } else {
+            self.loopLayer.strokeColor = UIColor.white.cgColor
+        }
         self.loopLayer.lineWidth = 2
         
         path.stroke()

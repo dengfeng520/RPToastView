@@ -20,14 +20,26 @@ public protocol DrakModeProtocol : NSObjectProtocol {
 extension UIColor {
     class var darkModeViewColor: UIColor {
         if #available(iOS 13.0, *) {
-            return UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+            return UIColor{(trainCollection) -> UIColor in
+                if trainCollection.userInterfaceStyle == .dark {
+                    return UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+                } else {
+                    return .groupTableViewBackground
+                }
+            }
         } else {
             return .groupTableViewBackground
         }
     }
-    class func configDarkModeViewColor() -> UIColor {
+    class func configDarkModeViewColor(_ settingColor: UIColor?) -> UIColor {
         if #available(iOS 13.0, *) {
-            return UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+            return UIColor{(trainCollection) -> UIColor in
+                if trainCollection.userInterfaceStyle == .dark {
+                    return UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+                } else {
+                    return .groupTableViewBackground
+                }
+            }
         } else {
             return .groupTableViewBackground
         }
@@ -45,17 +57,17 @@ extension UIColor {
             return .black
         }
     }
-    class func titleDarkModeTxtColorWith(_ dfaultColor: UIColor) -> UIColor {
+    class func titleDarkModeTxtColorWith(_ settingColor: UIColor?) -> UIColor {
         if #available(iOS 13.0, *) {
             return UIColor{(trainCollection) -> UIColor in
                 if trainCollection.userInterfaceStyle == .dark {
                     return .white
                 } else {
-                    return dfaultColor
+                    return settingColor!
                 }
             }
         } else {
-            return dfaultColor
+            return settingColor!
         }
     }
     class var subDarkModeViewColor: UIColor {
