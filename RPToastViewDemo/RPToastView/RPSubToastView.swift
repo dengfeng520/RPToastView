@@ -223,27 +223,28 @@ extension RPSubToastView {
     func showRootView(isShow: Bool) {
         self.rootView.isHidden = false
         self.rootView.alpha = 0
-        weak var weakSelf = self
         self.centerView.isHidden = false
         self.centerView.alpha = 0
-        UIView.animate(withDuration: 0.35, animations: {
-            weakSelf!.rootView.alpha = 1
-            weakSelf!.centerView.alpha = 1
+        UIView.animate(withDuration: 0.35, animations: { [weak self] in
+            guard let `self` = self else { return }
+            self.rootView.alpha = 1
+            self.centerView.alpha = 1
         }) { (finished) in
             
         }
     }
     
     func dismiss(isAnimation: Bool) {
-        weak var weakSelf = self
         if isAnimation == true {
-            UIView.animateKeyframes(withDuration: TimeInterval(0.35), delay: TimeInterval(self.showTime!), options: .calculationModeLinear, animations: {
-                weakSelf!.alpha = 0
-            }) { (finished) in
-                weakSelf!.removeProve()
+            UIView.animateKeyframes(withDuration: TimeInterval(0.35), delay: TimeInterval(self.showTime!), options: .calculationModeLinear, animations: { [weak self] in
+            guard let `self` = self else { return }
+                self.alpha = 0
+            }) {  [weak self] (finished) in
+                guard let `self` = self else { return }
+                self.removeProve()
             }
         } else {
-            weakSelf!.removeProve()
+            removeProve()
         }
     }
     
