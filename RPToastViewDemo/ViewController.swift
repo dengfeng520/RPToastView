@@ -81,6 +81,8 @@ extension ViewController: UITableViewDataSource {
             display.isCustomize = true
             display.bgColor = UIColor(red: 245.0/255.0, green: 190.0/255.0, blue: 98.0/255.0, alpha: 1)
             display.titleColor = .white
+            display.outerLayer = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1)
+            display.innerLayer = .white
             RPToastView.loading(display)
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
                 RPToastView.hidden(animation: true)
