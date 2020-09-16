@@ -72,71 +72,19 @@ import RPToastView
 
 <h2>Usage</h2>
 
-> onlyTextMode
-
 ```
-RPToastView.show(mode: .onlyTextMode, isView:self.view, text: "Loading....")
-```
-
-or
-
-```
-RPToastView.show(mode: .onlyTextMode, text: "Loading....")
-
-```
-
-> indeterminateMode
-
-
-```
-RPToastView.show(mode: .indeterminateMode, isView:self.view)
+var display = Display()
+display.mode = .loopAndTextMode
+display.title = "this is loop loading..."
+display.isCustomize = true
+display.bgColor = UIColor(red: 245.0/255.0, green: 190.0/255.0, blue: 98.0/255.0, alpha: 1)
+display.titleColor = .white
+display.outerLayer = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1)
+display.innerLayer = .white
+RPToastView.loading(display)
 ```
 
-or
 
-```
-RPToastView.show(mode: .indeterminateMode)
-```
-
-> mixedMode
-
-```
- RPToastView.show(mode: .mixedMode, isView:self.view, text: "Loading....")
-```
-or 
-
-```
-RPToastView.show(mode: .mixedMode, text: "Loading....")
-```
-
-> loopMode
-
-```
-RPToastView.show(mode: .loopMode, isView:self.view)
-```
-or
-
-```
-RPToastView.show(mode: .loopMode)
-```
-> loopAndTextMode
-
-```
-RPToastView.show(mode: .loopAndTextMode, isView:self.view, text: "Loading....")
-
-```
-or 
-
-```
-RPToastView.show(mode: .loopAndTextMode, text: "Loading....")
-
-```
-
-> hidden
-
-```
-RPToastView.hidden(animation: true)
-```
 
 ![demo1](https://github.com/dengfeng520/RPToastView/blob/master/demo1.png?raw=true)
 ![demo2](https://github.com/dengfeng520/RPToastView/blob/master/demo2.png?raw=true)
