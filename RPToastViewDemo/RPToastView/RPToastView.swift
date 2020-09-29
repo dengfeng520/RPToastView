@@ -101,8 +101,9 @@ public class RPToastView: ShowToastProtocol {
     
      public static func hidden(animation: Bool) {
         DispatchQueue.main.async {
-            self.toastView.dismiss(isAnimation: animation)
-            self.toastView.removeFromSuperview()
+            guard let toastView = toastView else { return }
+            toastView.dismiss(isAnimation: animation)
+            toastView.removeFromSuperview()
         }
     }
 }
