@@ -10,13 +10,12 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    var modeArray: Array<String>!
+    var modeArray: [String] = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
  
-        self.modeArray = Array.init()
         self.modeArray = ["onlyTextMode","indeterminateMode","mixedMode","loopMode","loopAndTextMode"]
         self.tableView.delegate = self
         self.tableView.dataSource = self
