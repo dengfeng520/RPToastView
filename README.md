@@ -2,13 +2,11 @@
 
 <h2>RPToastView</h2>
 
-* iOS 11.0+
-
-* Swift 5.0+
-
-* pod V1.7.0+
-
-* license MIT
+![](https://img.shields.io/badge/language-swift-orange.svg)
+![](https://img.shields.io/cocoapods/l/RPBannerView-Swift.svg?style=flat)
+![](https://img.shields.io/cocoapods/p/RPBannerView-Swift.svg?style=flat)
+![](https://img.shields.io/cocoapods/v/RPBannerView-Swift.svg?style=flat)
+![](https://img.shields.io/badge/carthage-v1.0-519dd9.svg)
 
 
 <h2>Requirements</h2>
