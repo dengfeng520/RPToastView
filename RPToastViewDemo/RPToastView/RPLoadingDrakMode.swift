@@ -20,28 +20,16 @@ public protocol DrakModeProtocol : NSObjectProtocol {
 extension UIColor {
     class var darkModeViewColor: UIColor {
         if #available(iOS 13.0, *) {
-            return UIColor{(trainCollection) -> UIColor in
-                if trainCollection.userInterfaceStyle == .dark {
-                    return UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
-                } else {
-                    return .groupTableViewBackground
-                }
-            }
+            return UIColor.label.withAlphaComponent(0.7)
         } else {
-            return .groupTableViewBackground
+            return UIColor(white: 0, alpha: 0.7)
         }
     }
     class func configDarkModeViewColor(_ settingColor: UIColor?) -> UIColor {
         if #available(iOS 13.0, *) {
-            return UIColor{(trainCollection) -> UIColor in
-                if trainCollection.userInterfaceStyle == .dark {
-                    return UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
-                } else {
-                    return .groupTableViewBackground
-                }
-            }
+            return UIColor.label.withAlphaComponent(0.7)
         } else {
-            return .groupTableViewBackground
+            return UIColor(white: 0, alpha: 0.7)
         }
     }
     class var titleDrakModeTextColor: UIColor {
@@ -72,28 +60,16 @@ extension UIColor {
     }
     class var subDarkModeViewColor: UIColor {
         if #available(iOS 13.0, *) {
-            return UIColor{(trainCollection) -> UIColor in
-                if trainCollection.userInterfaceStyle == .dark {
-                    return UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 0.35)
-                } else {
-                    return UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
-                }
-            }
+            return UIColor.label.withAlphaComponent(0.7)
         } else {
-            return .groupTableViewBackground
+            return UIColor(white: 0, alpha: 0.7)
         }
     }
     class func configSubDarkModeViewColor() -> UIColor {
         if #available(iOS 13.0, *) {
-            return UIColor{(trainCollection) -> UIColor in
-                if trainCollection.userInterfaceStyle == .dark {
-                    return UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
-                } else {
-                    return .groupTableViewBackground
-                }
-            }
+            return UIColor.label.withAlphaComponent(0.7)
         } else {
-            return .groupTableViewBackground
+            return UIColor(white: 0, alpha: 0.7)
         }
     }
     class var activityDarkModeColor: UIColor {

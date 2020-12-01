@@ -59,7 +59,7 @@ class RPLodingView: UIView {
             self.backgroundLayer.strokeColor = UIColor(red: 205/255, green: 205/255, blue: 205/255, alpha: 1).cgColor
         }
         self.backgroundLayer.fillColor = UIColor.clear.cgColor
-        self.backgroundLayer.lineWidth = 2
+        self.backgroundLayer.lineWidth = 2.5
         self.backgroundLayer.strokeStart = 0.0
         self.backgroundLayer.strokeEnd = 1.0
         let startPath = UIBezierPath(arcCenter: CGPoint(x: radius, y: radius), radius: radius, startAngle:0, endAngle: CGFloat.pi / 2, clockwise: true)

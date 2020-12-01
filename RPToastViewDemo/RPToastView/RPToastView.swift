@@ -19,6 +19,10 @@ public enum toastMode {
     case loopMode
     // Loop + Text
     case loopAndTextMode
+    // Rotate
+    case rotateMode
+    // Rotate + Text
+    case rotateAndTextMode
     // TODO: progress
     case progressMode
     // TODO: progress + Text

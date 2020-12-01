@@ -19,6 +19,7 @@ class RPSubToastView: UIView, DisplayProtocol {
     var centerView: UIView!
     var activityCenterY: NSLayoutConstraint!
     var loopCenterY: NSLayoutConstraint!
+    var rotateCenterY: NSLayoutConstraint!
     var showTime: Float?
     var bgColor: UIColor?
     var titleColor: UIColor?
@@ -32,7 +33,7 @@ class RPSubToastView: UIView, DisplayProtocol {
         titleLab.leftAnchor.constraint(equalTo: centerView.leftAnchor, constant: 8).isActive = true
         titleLab.rightAnchor.constraint(equalTo: centerView.rightAnchor, constant: -8).isActive = true
         titleLab.heightAnchor.constraint(greaterThanOrEqualToConstant: 25).isActive = true
-        titleLab.widthAnchor.constraint(greaterThanOrEqualToConstant: 120).isActive = true
+        titleLab.widthAnchor.constraint(greaterThanOrEqualToConstant: 100).isActive = true
         titleLab.widthAnchor.constraint(lessThanOrEqualTo: rootView.widthAnchor, multiplier: 0.75).isActive = true
         titleLab.bottomAnchor.constraint(equalTo: centerView.bottomAnchor, constant: -12).isActive = true
         titleLab.numberOfLines = 0
@@ -85,6 +86,18 @@ class RPSubToastView: UIView, DisplayProtocol {
         }
         return loopView
     }()
+    
+    lazy var rotateView: RPRotateView = {
+        let rotateView = RPRotateView(frame: CGRect.init(x: 0, y: 0, width: 36, height: 36))
+        centerView.addSubview(rotateView)
+        rotateView.translatesAutoresizingMaskIntoConstraints = false
+        rotateCenterY = rotateView.centerYAnchor.constraint(equalTo: centerView.centerYAnchor, constant: 0)
+        rotateCenterY.isActive = true
+        rotateView.centerXAnchor.constraint(equalTo: centerView.centerXAnchor, constant: 0).isActive = true
+        rotateView.widthAnchor.constraint(equalToConstant: 36).isActive = true
+        rotateView.heightAnchor.constraint(equalToConstant: 36).isActive = true
+        return rotateView
+    }()
 
     // MARK: - init UI
     override init(frame: CGRect) {
@@ -126,17 +139,30 @@ class RPSubToastView: UIView, DisplayProtocol {
     }
     
     func configCenterView() {
-        centerView = UIView.init()
+        centerView = UIView()
         rootView.addSubview(centerView!)
-        if isCustomize == true {
-            centerView.backgroundColor = bgColor
-        } else {
-            centerView.backgroundColor = .darkModeViewColor
-        }
+
+        rootView.backgroundColor = .clear
         centerView.translatesAutoresizingMaskIntoConstraints = false
         centerView.layer.cornerRadius = 10
         centerView.centerXAnchor.constraint(equalTo: rootView.centerXAnchor, constant: 0).isActive = true
         centerView.centerYAnchor.constraint(equalTo: rootView.centerYAnchor, constant: 0).isActive = true
+          
+
+        centerView.layoutIfNeeded()
+        
+        var effect: UIBlurEffect = UIBlurEffect(style: .light)
+        if #available(iOS 13.0, *) {
+            effect = UIBlurEffect(style: .systemThickMaterial)
+        } else {
+            effect = UIBlurEffect(style: .light)
+        }
+        let effectView: UIVisualEffectView = UIVisualEffectView(effect: effect)
+        centerView.addSubview(effectView)
+        effectView.frame = centerView.bounds
+        effectView.layer.cornerRadius = 10
+        effectView.layer.masksToBounds = true
+        effectView.autoresizingMask = UIView.AutoresizingMask(rawValue: UIView.AutoresizingMask.flexibleHeight.rawValue | UIView.AutoresizingMask.flexibleWidth.rawValue)
     }
     
     func configCenterView(mode: toastMode, text: String) {
@@ -147,8 +173,12 @@ class RPSubToastView: UIView, DisplayProtocol {
             configOnlyTextOrMixedModeUI(mode: mode, text: text)
         } else if mode == .loopMode {
             configLoopModeUI()
-        }else if mode == .loopAndTextMode {
+        } else if mode == .loopAndTextMode {
             configLoopAndTextModeUI(text: text)
+        } else if mode == .rotateMode {
+            configRotateModeUI()
+        } else if mode == .rotateAndTextMode {
+            configRotatAndTextModeUI(text: text)
         } else {
             centerView.widthAnchor.constraint(greaterThanOrEqualToConstant: 120).isActive = true
             centerView.heightAnchor.constraint(greaterThanOrEqualToConstant: 120).isActive = true
@@ -205,18 +235,38 @@ extension RPSubToastView {
     }
     
     func configLoopAndTextModeUI(text: String) {
-        self.centerView.widthAnchor.constraint(greaterThanOrEqualToConstant: 70).isActive = true
-        self.centerView.heightAnchor.constraint(greaterThanOrEqualToConstant: 70).isActive = true
-        self.centerView.widthAnchor.constraint(lessThanOrEqualTo: self.rootView.widthAnchor, multiplier: 0.8).isActive = true
+        centerView.widthAnchor.constraint(greaterThanOrEqualToConstant: 70).isActive = true
+        centerView.heightAnchor.constraint(greaterThanOrEqualToConstant: 70).isActive = true
+        centerView.widthAnchor.constraint(lessThanOrEqualTo: rootView.widthAnchor, multiplier: 0.8).isActive = true
         
-        self.titleLab.text = text;
+        titleLab.text = text;
         
-        self.loopView.removeConstraint(self.loopCenterY)
-        self.loopView.topAnchor.constraint(equalTo: centerView.topAnchor, constant: 20).isActive = true
-        self.loopView.bottomAnchor.constraint(equalTo: titleLab.topAnchor, constant: -15).isActive = true
-        self.loopView.start()
+        loopView.removeConstraint(loopCenterY)
+        loopView.topAnchor.constraint(equalTo: centerView.topAnchor, constant: 20).isActive = true
+        loopView.bottomAnchor.constraint(equalTo: titleLab.topAnchor, constant: -15).isActive = true
+        loopView.start()
     }
     
+    func configRotateModeUI() {
+        centerView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        centerView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        rotateView.startLoading()
+    }
+    
+    func configRotatAndTextModeUI(text: String) {
+        centerView.widthAnchor.constraint(greaterThanOrEqualToConstant: 70).isActive = true
+        centerView.heightAnchor.constraint(greaterThanOrEqualToConstant: 70).isActive = true
+        centerView.widthAnchor.constraint(lessThanOrEqualTo: self.rootView.widthAnchor, multiplier: 0.8).isActive = true
+        
+        titleLab.text = text;
+        
+        rotateView.removeConstraint(rotateCenterY)
+        rotateView.topAnchor.constraint(equalTo: centerView.topAnchor, constant: 20).isActive = true
+        rotateView.bottomAnchor.constraint(equalTo: titleLab.topAnchor, constant: -15).isActive = true
+        
+        rotateView.startLoading()
+    }
 }
 
 extension RPSubToastView {
