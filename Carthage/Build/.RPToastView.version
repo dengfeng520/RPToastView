@@ -11,7 +11,7 @@
   "commitish" : "2.0",
   "iOS" : [
     {
-      "hash" : "468a9f3071bba8f47fc8b514733af33494b448271a92367eb728b292b3c87970",
+      "hash" : "215351fd1dde865a746f17ca8e27a68edeee655051ae58d7dd2e0650549133af",
       "name" : "RPToastView",
       "linking" : "dynamic",
       "swiftToolchainVersion" : "5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
