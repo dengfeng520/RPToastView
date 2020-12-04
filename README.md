@@ -82,7 +82,6 @@ display.innerLayer = .white
 RPToastView.loading(display)
 ```
 
-![demo11](https://github.com/dengfeng520/RPToastView/blob/master/demo11.png?raw=true)
 
 ![demo1](https://github.com/dengfeng520/RPToastView/blob/master/demo1.png?raw=true)
 ![demo2](https://github.com/dengfeng520/RPToastView/blob/master/demo2.png?raw=true)
@@ -94,3 +93,7 @@ RPToastView.loading(display)
 ![demo8](https://github.com/dengfeng520/RPToastView/blob/master/demo8.png?raw=true)
 ![demo9](https://github.com/dengfeng520/RPToastView/blob/master/demo9.png?raw=true)
 ![demo10](https://github.com/dengfeng520/RPToastView/blob/master/demo10.png?raw=true)
+![demo10](https://github.com/dengfeng520/RPToastView/blob/master/demo11.png?raw=true)
+![demo10](https://github.com/dengfeng520/RPToastView/blob/master/demo12.png?raw=true)
+![demo10](https://github.com/dengfeng520/RPToastView/blob/master/demo13.png?raw=true)
+![demo10](https://github.com/dengfeng520/RPToastView/blob/master/demo14.png?raw=true)

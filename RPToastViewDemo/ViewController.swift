@@ -16,9 +16,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     
-        self.modeArray = ["onlyTextMode","indeterminateMode","mixedMode","loopMode","loopAndTextMode","rotateMode","rotateAndTextMode","other"]
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
+        modeArray = ["onlyTextMode","indeterminateMode","mixedMode","loopMode","loopAndTextMode","rotateMode","rotateAndTextMode"]
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.tableFooterView = UIView()
     }
 }
 
@@ -34,13 +35,13 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return modeArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "ToastTableViewCellID")!
         
-        cell.textLabel?.text = self.modeArray[indexPath.row]
+        cell.textLabel?.text = modeArray[indexPath.row]
         
         return cell
     }
@@ -49,7 +50,9 @@ extension ViewController: UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath.row {
         case 0:
-            RPToastView.loading(Display())
+            var display = Display()
+            display.title = "test Loading..."
+            RPToastView.loading(display)
             break
         case 1:
             var display = Display()
@@ -62,7 +65,7 @@ extension ViewController: UITableViewDataSource {
             }
             break
         case 2:
-            RPToastView.loading(Display(mode: .mixedMode, isView: self.view, title: "Loading...", dimBackground: true))
+            RPToastView.loading(Display(mode: .mixedMode, isView: self.view, title: "Loading..."))
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
                 RPToastView.hidden(animation: true)
             }
@@ -92,18 +95,7 @@ extension ViewController: UITableViewDataSource {
             }
             break
         default:
-            var display = Display()
-            display.mode = .rotateAndTextMode
-            display.title = "this is loop loading..."
-            display.isCustomize = true
-            display.bgColor = UIColor(red: 245.0/255.0, green: 190.0/255.0, blue: 98.0/255.0, alpha: 1)
-            display.titleColor = .white
-            display.outerLayer = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1)
-            display.innerLayer = .white
-            RPToastView.loading(display)
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
-                RPToastView.hidden(animation: true)
-            }
+            
             break
         }
     }

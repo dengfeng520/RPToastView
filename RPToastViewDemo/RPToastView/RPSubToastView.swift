@@ -125,7 +125,7 @@ class RPSubToastView: UIView, DisplayProtocol {
     }
     
     func configRootView(isDim: Bool?) {
-        rootView = UIView.init()
+        rootView = UIView()
         self.addSubview(rootView)
         rootView.translatesAutoresizingMaskIntoConstraints = false
         rootView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
@@ -142,12 +142,10 @@ class RPSubToastView: UIView, DisplayProtocol {
         centerView = UIView()
         rootView.addSubview(centerView!)
 
-        rootView.backgroundColor = .clear
         centerView.translatesAutoresizingMaskIntoConstraints = false
         centerView.layer.cornerRadius = 10
         centerView.centerXAnchor.constraint(equalTo: rootView.centerXAnchor, constant: 0).isActive = true
         centerView.centerYAnchor.constraint(equalTo: rootView.centerYAnchor, constant: 0).isActive = true
-          
 
         centerView.layoutIfNeeded()
         

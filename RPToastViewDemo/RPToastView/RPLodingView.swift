@@ -69,10 +69,10 @@ class RPLodingView: UIView {
             if let innerLayer = innerLayer {
                 self.loopLayer.strokeColor = innerLayer.cgColor
             } else {
-                self.loopLayer.strokeColor = UIColor.white.cgColor
+                self.loopLayer.strokeColor = UIColor.activityDarkModeColor.cgColor
             }
         } else {
-            self.loopLayer.strokeColor = UIColor.white.cgColor
+            self.loopLayer.strokeColor = UIColor.activityDarkModeColor.cgColor
         }
         self.loopLayer.lineWidth = 2
         
