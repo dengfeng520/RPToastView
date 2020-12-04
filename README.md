@@ -85,7 +85,7 @@ RPToastView.loading(display)
 
 ![demo1](https://github.com/dengfeng520/RPToastView/blob/master/demo1.png?raw=true)
 ![demo2](https://github.com/dengfeng520/RPToastView/blob/master/demo2.png?raw=true)
-![demo3](https://github.com/dengfeng520/RPToastView/blob/master/demo3.png?raw=true)
+![demo3](https://github.com/dengfeng520/RPToastView/blob/master/ddemo3.png?raw=true)
 ![demo4](https://github.com/dengfeng520/RPToastView/blob/master/demo4.png?raw=true)
 ![demo5](https://github.com/dengfeng520/RPToastView/blob/master/demo5.png?raw=true)
 ![demo6](https://github.com/dengfeng520/RPToastView/blob/master/demo6.png?raw=true)
