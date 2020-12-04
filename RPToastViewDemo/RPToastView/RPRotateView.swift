@@ -80,15 +80,17 @@ class RPRotateView: UIView {
         let smoothedPath: UIBezierPath = UIBezierPath(arcCenter: arcCenter, radius: radius, startAngle: CGFloat(Double.pi * 3 / 2), endAngle: CGFloat(Double.pi / 2 + Double.pi * 5), clockwise: true)
         layer.path = smoothedPath.cgPath
         let maskLayer: CALayer = CALayer()
-        maskLayer.contents = bundleImageNamed("angle-mask")?.cgImage
+        maskLayer.contents = fetchImage.cgImage
         maskLayer.frame = layer.bounds
         layer.mask = maskLayer
     }
     
-    func bundleImageNamed(_ filename: String) -> UIImage? {
-        let pathName = "maskImage.bundle/image/\(filename)"
-        let url = "\(Bundle.main.resourcePath ?? "")/\(pathName)"
-        return UIImage(contentsOfFile: url )
+    var fetchBundle: Bundle {
+        return Bundle(path: Bundle(for: RPRotateView.self).path(forResource: "maskImage", ofType: "bundle")!)!
+    }
+    
+    var fetchImage: UIImage {
+        return (UIImage(contentsOfFile: self.fetchBundle.path(forResource: "angle-mask", ofType: "png") ?? String())?.withRenderingMode(.alwaysTemplate)) ?? UIImage()
     }
 }
 

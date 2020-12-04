@@ -14,9 +14,9 @@
 		1D487312250757F40049344D /* RPLoadingDrakMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D487311250757F40049344D /* RPLoadingDrakMode.swift */; };
 		1D70EFC42575F46E00E97431 /* RPRotateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D70EFC32575F46E00E97431 /* RPRotateView.swift */; };
 		1D70EFCE25763D6300E97431 /* RPRotateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D70EFC32575F46E00E97431 /* RPRotateView.swift */; };
-		1D9C02C62578D2310014F83C /* maskImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1D9C02C52578D2310014F83C /* maskImage.bundle */; };
-		1D9C02CB2578D4310014F83C /* maskImage.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9C02C52578D2310014F83C /* maskImage.bundle */; };
-		1D9C02CE2578D4BF0014F83C /* maskImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1D9C02C52578D2310014F83C /* maskImage.bundle */; };
+		1DD29E5D2579CFAB005F98DC /* maskImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1DD29E5C2579CFAB005F98DC /* maskImage.bundle */; };
+		1DD29E5F2579D010005F98DC /* maskImage.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1DD29E5C2579CFAB005F98DC /* maskImage.bundle */; };
+		1DD29E612579D02B005F98DC /* maskImage.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD29E5C2579CFAB005F98DC /* maskImage.bundle */; };
 		9EDA4F4B22C609B700A99C9A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDA4F4A22C609B700A99C9A /* AppDelegate.swift */; };
 		9EDA4F4D22C609B700A99C9A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDA4F4C22C609B700A99C9A /* ViewController.swift */; };
 		9EDA4F5022C609B700A99C9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EDA4F4E22C609B700A99C9A /* Main.storyboard */; };
@@ -48,7 +48,7 @@
 		1D0E0B6F2507787F0035FF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D487311250757F40049344D /* RPLoadingDrakMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPLoadingDrakMode.swift; sourceTree = "<group>"; };
 		1D70EFC32575F46E00E97431 /* RPRotateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPRotateView.swift; sourceTree = "<group>"; };
-		1D9C02C52578D2310014F83C /* maskImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = maskImage.bundle; sourceTree = "<group>"; };
+		1DD29E5C2579CFAB005F98DC /* maskImage.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = maskImage.bundle; sourceTree = "<group>"; };
 		9EDA4F4722C609B700A99C9A /* RPToastViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPToastViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EDA4F4A22C609B700A99C9A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EDA4F4C22C609B700A99C9A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D9C02CB2578D4310014F83C /* maskImage.bundle in Frameworks */,
+				1DD29E612579D02B005F98DC /* maskImage.bundle in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +142,7 @@
 		9EDA4F5C22C609C200A99C9A /* RPToastView */ = {
 			isa = PBXGroup;
 			children = (
-				1D9C02C52578D2310014F83C /* maskImage.bundle */,
+				1DD29E5C2579CFAB005F98DC /* maskImage.bundle */,
 				9EDAB56122C9AAF800C05CEC /* RPLodingView.swift */,
 				9EDA4F5D22C609DE00A99C9A /* RPSubToastView.swift */,
 				9EDA4F5E22C609DE00A99C9A /* RPToastView.swift */,
@@ -244,7 +244,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D9C02CE2578D4BF0014F83C /* maskImage.bundle in Resources */,
+				1DD29E5F2579D010005F98DC /* maskImage.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,7 +255,7 @@
 				9EDA4F5522C609B700A99C9A /* LaunchScreen.storyboard in Resources */,
 				9EDA4F5222C609B700A99C9A /* Assets.xcassets in Resources */,
 				9EDA4F5022C609B700A99C9A /* Main.storyboard in Resources */,
-				1D9C02C62578D2310014F83C /* maskImage.bundle in Resources */,
+				1DD29E5D2579CFAB005F98DC /* maskImage.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

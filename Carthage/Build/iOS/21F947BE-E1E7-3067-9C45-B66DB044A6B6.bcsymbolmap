@@ -24,7 +24,8 @@ ___swift_instantiateConcreteTypeFromMangledName
 _$sSo11CAAnimationCMa
 _$sSo20UIUserInterfaceStyleVSYSCSY8rawValue03RawE0QzvgTW
 _$s11RPToastView08RPRotateB0C15backgroundLayerSo07CAShapeE0CvgA2FXEfU_Tf4nn_g
-_$s11RPToastView08RPRotateB0C16bundleImageNamedySo7UIImageCSgSSFTf4nd_n
+_$s11RPToastView08RPRotateB0C11fetchBundleSo8NSBundleCvgTf4d_n
+_$s11RPToastView08RPRotateB0C10fetchImageSo7UIImageCvgTf4d_n
 _$ss13_StringObjectV7VariantOWOe
 _$s11RPToastView08RPRotateB0C13animatedLayerSo07CAShapeE0CvgA2FXEfU_Tf4nn_g
 _$s11RPToastView08RPRotateB0C5coderACSgSo7NSCoderC_tcfcTf4dn_n
@@ -94,7 +95,8 @@ _$s11RPToastView08RPRotateB0C13animatedLayerSo07CAShapeE0CvsTq
 _$s11RPToastView08RPRotateB0C13animatedLayerSo07CAShapeE0CvMTq
 _$s11RPToastView08RPRotateB0C11layerCenterSo7CGPointVyFTq
 _$s11RPToastView08RPRotateB0C26setupIndeterminateMaskAnim5layerySo12CAShapeLayerC_tFTq
-_$s11RPToastView08RPRotateB0C16bundleImageNamedySo7UIImageCSgSSFTq
+_$s11RPToastView08RPRotateB0C11fetchBundleSo8NSBundleCvgTq
+_$s11RPToastView08RPRotateB0C10fetchImageSo7UIImageCvgTq
 _$s11RPToastView08RPRotateB0CN
 _OBJC_CLASS_$__TtC11RPToastView12RPRotateView
 Apple clang version 12.0.0 (clang-1200.0.32.8)
@@ -105,11 +107,10 @@ Apple Swift version 5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)
 init
 $s11RPToastView08RPRotateB0C13animatedLayerSo07CAShapeE0CvgA2FXEfU_Tf4nn_g
 layerCenter
-bundleImageNamed
+fetchImage.get
 <compiler-generated>
-appendLiteral
-appendInterpolation
-$sSSs20TextOutputStreamablessAAP5write2toyqd__z_ts0aB6StreamRd__lFTWs26DefaultStringInterpolationV_Ti5
+fetchBundle.get
+Swift runtime failure: Unexpectedly found nil while unwrapping an Optional value
 $s11RPToastView08RPRotateB0C15backgroundLayerSo07CAShapeE0CvgA2FXEfU_Tf4nn_g
 rawValue.get
 $sSo11CAAnimationCMa
@@ -417,7 +418,6 @@ rotateCenterY.set
 RPToastViewDemo/RPToastView/RPRotateView.swift
 $s11RPToastView010RPSubToastB0C04loopB0AA08RPLodingB0CvgAFyXEfU_yycfU_
 dismiss
-Swift runtime failure: Unexpectedly found nil while unwrapping an Optional value
 showTime.get
 $s11RPToastView010RPSubToastB0C04loopB0AA08RPLodingB0CvgAFyXEfU_
 clouse.set
