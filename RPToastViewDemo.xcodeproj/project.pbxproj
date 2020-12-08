@@ -329,7 +329,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bjtsn.JavaScriptDemo.RPToastView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bjtsn.RPToastView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -360,7 +360,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bjtsn.JavaScriptDemo.RPToastView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bjtsn.RPToastView;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;

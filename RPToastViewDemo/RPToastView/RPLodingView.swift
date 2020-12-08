@@ -53,13 +53,13 @@ class RPLodingView: UIView {
             if let outerLayer = outerLayer {
                 self.backgroundLayer.strokeColor = outerLayer.cgColor
             } else {
-                self.backgroundLayer.strokeColor = UIColor(red: 205/255, green: 205/255, blue: 205/255, alpha: 1).cgColor
+                self.backgroundLayer.strokeColor = UIColor.outerLayerDarkModeColor.cgColor
             }
         } else {
-            self.backgroundLayer.strokeColor = UIColor(red: 205/255, green: 205/255, blue: 205/255, alpha: 1).cgColor
+            self.backgroundLayer.strokeColor = UIColor.outerLayerDarkModeColor.cgColor
         }
         self.backgroundLayer.fillColor = UIColor.clear.cgColor
-        self.backgroundLayer.lineWidth = 2.5
+        self.backgroundLayer.lineWidth = 3
         self.backgroundLayer.strokeStart = 0.0
         self.backgroundLayer.strokeEnd = 1.0
         let startPath = UIBezierPath(arcCenter: CGPoint(x: radius, y: radius), radius: radius, startAngle:0, endAngle: CGFloat.pi / 2, clockwise: true)
@@ -74,7 +74,7 @@ class RPLodingView: UIView {
         } else {
             self.loopLayer.strokeColor = UIColor.activityDarkModeColor.cgColor
         }
-        self.loopLayer.lineWidth = 2
+        self.loopLayer.lineWidth = 3
         
         path.stroke()
     }

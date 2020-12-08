@@ -115,4 +115,17 @@ extension UIColor {
             return UIColor(red: 0, green: 0, blue: 0, alpha: 0.75)
         }
     }
+    class var outerLayerDarkModeColor: UIColor {
+        if #available(iOS 13.0, *) {
+            return UIColor{(trainCollection) -> UIColor in
+                if trainCollection.userInterfaceStyle == .dark {
+                    return UIColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
+                } else {
+                    return UIColor(red: 205/255, green: 205/255, blue: 205/255, alpha: 1)
+                }
+            }
+        } else {
+            return UIColor(red: 205/255, green: 205/255, blue: 205/255, alpha: 1)
+        }
+    }
 }

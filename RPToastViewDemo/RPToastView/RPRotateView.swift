@@ -13,7 +13,7 @@ class RPRotateView: UIView {
     /// 圆弧半径：默认18
     let radius: CGFloat = 18
     /// 线条宽度：默认2.5
-    let lineWidth: CGFloat = 2.5
+    let lineWidth: CGFloat = 3
     /// 圆弧的背景颜色：默认半透明黑色
     let bgColor: UIColor = UIColor.black.withAlphaComponent(0.5)
     /// 进度的颜色：默认白色
